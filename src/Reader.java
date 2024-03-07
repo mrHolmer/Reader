@@ -18,16 +18,13 @@ public class Reader {
         }
     }
 
-    public static void main(String[] args) throws FileNotFoundException {
-        Reader r = new Reader();
-        System.out.println(r.words);
-        System.out.println(r.search("holmer"));
-        System.out.println(r.search("Zygotic"));
-    }
-
     public boolean search(String target) {
         for (String word : words)
             if (word.equals(target)) return true;
         return false;
+    }
+
+    public ArrayList<String> getWords() {
+        return words;
     }
 }
