@@ -5,16 +5,15 @@ import java.util.Scanner;
 
 public class Reader {
     private final ArrayList<String> words;
-    private final File file;
-    private final Scanner scanner;
 
     public Reader() throws FileNotFoundException {
-        words = new ArrayList();
-        file = new File("src/allwords.txt");
-        scanner = new Scanner(file);
+        words = new ArrayList<>();
+        File file = new File("src/allwords.txt");
+        Scanner scanner = new Scanner(file);
         while (scanner.hasNextLine()) {
-            if (scanner.nextLine().length() == 0)
-                words.add(scanner.nextLine());
+            String word = scanner.nextLine();
+            if (word.length() != 0)
+                words.add(word);
         }
     }
 
